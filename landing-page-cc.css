@@ -1,0 +1,401 @@
+
+/*verändert alle Elemente mit dem Namen*/
+:root {
+  --background-crimson: rgba(220,20,60);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Catamaran';
+}
+
+#header {
+  width: 100%;
+  height: 80px;
+  display: block;
+  background-color: var(--background-crimson);
+  position: fixed;
+}
+
+.inner-header {
+  width: 90%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/*puts logo to left side */
+.logo-container {
+  height: 100%;
+  display: table;
+  float: left;
+}
+
+/*size, position and radius of image logo*/
+#header-img {
+  height: 100%;
+  width: 100px;
+  border-radius: 50%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.logo-container h1 {
+  color: white;
+  height: 100%; 
+  width: 100px;
+  border-radius: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 40px;
+  font-weight: 200;
+  padding-left: 0.3em;
+}
+
+.logo-container h1 span {
+  color: #FFE4C4;
+}
+
+/*navigation bar */
+.nav-toggle {
+  /*checkbox verschwindet*/
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1em;
+ /*positioniert label in die Mitte*/
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: right;
+  top: 100%;
+  right: 0;
+  background: var(--background-crimson);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+nav a {
+  color: #FFE4C4;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* ~ schaut, ob es ein sibling, hier "nav", nach nav-toggle gibt*/
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+  }
+  
+  .logo-container {
+    grid-column: 2 / 3;
+  }
+  
+  nav {
+    all: unset;
+    grid-column: 3/4;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 5em;
+    margin-bottom: 0;
+  }
+}
+
+/*Info boxes*/
+.info-container {
+
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #F0FFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.info-box {
+  padding-top: 9em;
+  padding-bottom: 5em;
+  width: 30%; 
+  box-sizing: border-box;
+}
+
+.icon {
+  color: #DC143C;
+}
+
+@media screen and (max-width: 800px) {
+  .info-box {
+    width: 90%;
+    margin-top: 100px;
+    padding-top: 0em;
+  }
+}
+
+/*Video*/
+#threed-secure {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-crimson);
+  padding: 6em;
+}
+
+#threed-secure > iframe {
+  max-width: 560px;
+  width: 100%;
+}
+
+/*Übersicht Kreditkarten*/
+
+#kreditkarten {
+  background-color: #F0FFFF;
+  padding: 6em;
+}
+/*Flex-Container*/
+.kreditkarten-angebot {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid;
+  margin: 0 10px;
+  transition: .8s;
+/*Sub-Flexbox wird erstellt, sonst können die 
+  Buttons nicht unten positioniert werden*/
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0,0,0.3);
+  transform: scale(1.05);
+}
+
+.card .angebote .name {
+  background-color: var(--background-crimson);
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+/*Sammelt alle Items in Sub-Flexbox*/
+.card > * {
+  flex: 1;
+  flex-basis: 100%;
+}
+
+.card p {
+  font-size: 30px;
+}
+
+.card .preis {
+  font-size: 25px;
+  padding-bottom: 25px;
+}
+
+.card .btn {
+  align-self: flex-end; 
+}
+
+.card button {
+  background-color: var(--background-crimson);
+  border-color: var(--background-crimson);
+  color: #FFE4C4;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 750px) {
+  .kreditkarten-angebot {
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 1 0 50%;
+    margin-bottom: 16px;
+  }
+}
+
+/*Newsletter*/
+.newsletter-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #F0FFFF;
+}
+
+
+.newsletter-container h2 {
+  margin-bottom: 10px;
+}
+
+.email-input {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.email-input i {
+  background: var(--background-crimson);
+  width: 50px;
+  line-height: 50px;
+}
+
+#email {
+  width: 0px;
+  border: none;
+  transition: 0.5s;
+}
+
+.email-input:hover > #email, #email:focus {
+  width: 300px;
+  padding: 0 10px;
+  border: 1px solid #DC143C;
+  background-color: white;
+}
+
+.email-input i {
+  color: white;
+}
+
+#submit {
+  background: var(--background-crimson);
+  border: none;
+  padding: 0 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+}
+
+/* footer */
+footer {
+  width: 100vw;
+  display: block;
+  overflow: hidden;
+  padding: 40px 0;
+  box-sizing: border-box;
+  background-color:var(--background-crimson);
+}
+
+.inner-footer {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+}
+
+.inner-footer .inner-third {
+  padding-right: 2em;
+  padding-bottom: 1em;
+  margin-right: 5px;
+  float: left;
+  height: 100%;
+}
+
+.inner-footer .inner-third h1 {
+  font-size: 22px;
+  color: #FFE4C4;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.inner-footer .inner-third a {
+  font-size: 15px;
+  color: #FFE4C4;
+  display: block;
+  width: 100%;
+}
+
+.inner-footer .inner-third li {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 20px;
+}
+
+.inner-footer .inner-third span {
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  color: white;
+}
