@@ -1,0 +1,197 @@
+<link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<head>
+  <title>Product Landing Page</title>
+</head>
+
+<body>
+<!----header and navigation----------------->
+  <header id="header">
+    <!---inner header to position logo and navigation easier into the center of the header--------------->
+    <div class="inner-header">
+      <div class="logo-container">
+    <img id="header-img" src="https://cdn.pixabay.com/photo/2015/09/22/13/30/puzzled-by-finance-951618_1280.png"
+        alt="bank logo"/>
+ 
+        <h1>My<span>Bank</span></h1>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+ <!---------navigation-----------------------------> 
+      <nav id="nav-bar">
+      <ul>
+  <!---it's easier to center the links when we put <a> outside of <li>-->
+        <a class="nav-link" href="#infos"><li>Informationen</li></a>
+        <a class="nav-link" href="#threed-secure"><li>3D-Secure</li></a>
+        <a class="nav-link" href="#kreditkarten"><li>Kreditkarten</li></a>
+      </ul>
+    </nav>
+ <!-----for=... schaut nach einer ID---------->     
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </div>
+  </header>
+  
+  <main>
+  <!----Abschnitt: Informationen------------------>  
+    <section id="infos">
+      <div class="info-container">
+      <div class="info-box">
+        <div class="icon"><i class="fa fa-globe fa-3x" aria-hidden="true"></i></div>
+         <h2>Bezahlen & Abheben weltweit</h2>
+        <p>
+            Bezahlen Sie mit Ihrer Kreditkarte im In- & Ausland und heben Sie Bargeld an weltweit über 1 Mio. Geldautomaten ab.
+          </p>
+      </div>
+      
+       <div class="info-box">
+         <div class="icon"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></div>
+         <h2>3D-Secure</h2>
+        <p>
+            Kaufen Sie mit Ihrer Kreditkarte sicher im Internet ein.
+          </p>
+      </div>
+      
+      
+      <div class="info-box">
+        <div class="icon"><i class="fa fa-credit-card fa-3x" aria-hidden="true"></i></div>
+         <h2>Motiv-Auswahl</h2>
+        <p>
+            Wählen Sie aus fünf verschiedenen Motiven.
+          </p>
+      </div>
+      </div>
+    </section>
+  
+  <!----Abschnitt: 3D-Secure------------------> 
+    <section id="threed-secure">
+       <iframe
+        id="video"
+        width="560" 
+        height="315" src="https://www.youtube-nocookie.com/embed/en4ORjl1OY8" frameborder="0"  allowfullscreen></iframe>
+    </section>
+   
+ <!----Abschnitt: Kreditkarten------------------> 
+    <section id="kreditkarten">
+      
+ <!----Flex-Container--------------------------->     <div class="kreditkarten-angebot">
+      
+  <!---------Student-Kreditkarte---------------->
+       <div class="card student">
+        <ul class="angebote">
+          <li class="name">Students</li>
+          <li class="preis">Kostenfrei</li>
+          <li>Auswahl aus 5 Motiven</li>
+          <li>Kreditkarte auf Guthabenbasis</li>
+          <li>Für Jugendliche, Auszubildende <br>und Studierende</li>
+          <li>Bargeld an weltweit über 1 Mio. Geldautomaten abheben</li>
+          <li>Bezahlen im In- & Ausland</li>
+          <li>Eigene PIN-Wahl</li>         
+        </ul>
+              
+        <button class="btn">Wählen</button>
+         
+      </div>
+   <!--------Travel-Kreditkarte------------------>   
+       <div class="card travel">
+        <ul class="angebote">
+          <li class="name">Travel</li>
+          <li class="preis">2,00 €/Monat</li>
+          <li>Auswahl aus 5 Motiven</li>
+          <li>Reservierung von Mietwagen, Hotelzimmern & Flügen</li>
+           <li>Reise-Gepäck- & Reiserücktrittsversicherung inklusive</li>
+           <li>Kontaktlos bezahlen</li>
+          <li>3D Secure</li>
+          <li>Bargeld an weltweit über 1 Mio. Geldautomaten abheben</li>
+          <li>Bezahlen im In- & Ausland</li>
+          <li>Eigene PIN-Wahl</li>
+        </ul>
+         
+        <button class="btn">Wählen</button>
+      </div>
+      
+   <!--------Klassische-Kreditkarte---------------->   <div class="card classic">
+       <ul class="angebote">
+          <li class="name">Classic</li>
+          <li class="preis">1,00 €/Monat</li>
+          <li>Auswahl aus 5 Motiven</li>
+          <li>Reservierung von Mietwagen, Hotelzimmern & Flügen</li>
+           <li>Kontaktlos bezahlen</li>
+          <li>3D Secure</li>
+          <li>Bargeld an weltweit über 1 Mio. Geldautomaten abheben</li>
+        </ul>
+      
+        <button class="btn">Wählen</button>
+      </div>
+ 
+ <!----------Mitglieder-Karte--------------------->
+      <div class="card member">
+        <ul class="angebote">
+          <li class="name">Member</li>
+          <li class="preis">3,00 €/Monat</li>
+          <li>Auswahl aus 5 Motiven</li>
+          <li>gebührenfrei weltweit bezahlen & abheben</li>
+          <li>Reise-Gepäck- & Reiserücktrittsversicherung inklusive</li>
+          <li>Reservierung von Mietwagen, Hotelzimmern & Flügen</li>
+           <li>Kontaktlos bezahlen</li>
+          <li>3D Secure</li>
+          <li>Bargeld an weltweit über 1 Mio. Geldautomaten abheben</li>
+          <li>Eigene PIN-Wahl</li>
+        </ul>
+        
+        <button class="btn">Wählen</button>
+      </div>
+      </div>
+    </section>
+ 
+    
+ <!----Abschnitt: Newsletter------------------>
+    <section id="newsletter">
+      <div class="newsletter-container">
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+          <h2>Abonnieren Sie unseren Newsletter</h2>
+          <div class="email-input">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <input id="email" 
+                   type="email" 
+                   name="email"  
+                   placeholder="E-Mail-Adresse*" required/> 
+<input id="submit" type="submit" value="Bestätigen" />
+          </div>
+        </form>
+      </div>
+    </section>
+    
+  </main>
+  
+  
+<!-------Footer--------------------------------->  
+  <footer>
+
+    <div class="inner-footer">
+      <div class="inner-third">
+        <h1>Benötigen Sie Hilfe?</h1>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+      
+       <div class="inner-third">
+         <h1>Service</h1>
+        <a href="#">Kontakt</a>
+        <a href="#">Feedback</a>
+      </div>
+       
+       <div class="inner-third">
+         <h1>Folgen Sie uns!</h1>
+         <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+         <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+         
+         <span><i class="fa fa-copyright" aria-hidden="true"></i> 2019, Mareike Wendler</span>
+      </div>
+          
+    </div>
+  </footer>
+  
+</body>
